@@ -199,8 +199,8 @@ function renderEpisodes() {
   if (filtered.length === 0) {
     grid.innerHTML = `
       <div style="grid-column: 1 / -1; text-align: center; padding: 40px; border: 1px dashed var(--border-color); color: var(--text-muted);">
-        <p>[ ALERT: 404_INDEX_EMPTY ]</p>
-        <p style="font-size: 12px; margin-top: 4px;">No logs match query constraints.</p>
+        <p>No episodes match your search.</p>
+        <p style="font-size: 12px; margin-top: 4px;">Try a different filter or check back soon.</p>
       </div>
     `;
     return;
@@ -208,18 +208,19 @@ function renderEpisodes() {
   
   grid.innerHTML = filtered.map(ep => {
     return `
-      <div class="episode-card" data-id="${ep.id}">
+      <div class="episode-card coming-soon-card" data-id="${ep.id}">
+        <div class="coming-soon-badge">Coming Soon</div>
         <div>
           <div class="card-tech-meta">
-            <span>[ ${ep.number} ]</span>
-            <span>[ ${ep.published} ]</span>
+            <span>${ep.number}</span>
+            <span class="tag-pill">${ep.stage}</span>
           </div>
           
           <div class="card-body-details">
             <h3>${ep.title}</h3>
             
             <div class="card-guest-row">
-              <img class="card-guest-avatar" src="${ep.guestImage}" alt="${ep.guest}">
+              <div class="card-guest-avatar-blur"></div>
               <span class="card-guest-txt">${ep.guest} &bull; ${ep.guestRole}</span>
             </div>
             
@@ -228,18 +229,21 @@ function renderEpisodes() {
         </div>
         
         <div class="card-tech-footer">
-          <span class="card-stats">${ep.listenCount}</span>
-          <span style="color: var(--accent-gold); font-weight: 700;">[ ${ep.stage} ]</span>
+          <span class="notify-cta" onclick="document.querySelector('.terminal-input').focus(); document.querySelector('.terminal-input').scrollIntoView({behavior:'smooth'}); event.stopPropagation();">🔔 Notify me</span>
+          <span style="color: var(--text-muted); font-size: 11px;">Episode dropping soon</span>
         </div>
       </div>
     `;
   }).join('');
   
-  // Card click triggers details drawer
-  document.querySelectorAll(".episode-card").forEach(card => {
+  // Cards are coming soon — clicking scrolls to newsletter instead of opening drawer
+  document.querySelectorAll(".coming-soon-card").forEach(card => {
     card.addEventListener("click", () => {
-      const epId = card.getAttribute("data-id");
-      openEpisodeDrawer(epId);
+      const input = document.querySelector('.terminal-input');
+      if (input) {
+        input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => input.focus(), 400);
+      }
     });
   });
 }

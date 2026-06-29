@@ -1330,4 +1330,157 @@ footer {
   .about-pod-stats {
     gap: 10px;
   }
+  .differentiators {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Coming Soon Cards ───────────────────────────────────────────── */
+.coming-soon-card {
+  position: relative;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: var(--transition-smooth);
+}
+
+.coming-soon-card:hover {
+  opacity: 1;
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--accent-gold);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.coming-soon-badge::before {
+  content: '◉';
+  font-size: 8px;
+  animation: blink 1.4s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Tag pill (replaces date on cards) */
+.tag-pill {
+  background: var(--accent-gold-light);
+  color: var(--accent-gold);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Blurred avatar placeholder */
+.card-guest-avatar-blur {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-gold-light), var(--border-color));
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+/* Notify me CTA */
+.notify-cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  cursor: pointer;
+  padding: 4px 10px;
+  border: 1px solid var(--accent-gold);
+  border-radius: 4px;
+  transition: var(--transition-fast);
+  letter-spacing: 0.04em;
+}
+
+.notify-cta:hover {
+  background: var(--accent-gold-light);
+}
+
+/* ── Launch Teaser Player ────────────────────────────────────────── */
+.launch-teaser .soundwave-svg path {
+  stroke: var(--accent-gold);
+  filter: drop-shadow(0 0 6px var(--accent-glow));
+}
+
+.teaser-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.teaser-tagline {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.teaser-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-gold);
+  margin-top: 6px;
+  letter-spacing: 0.06em;
+}
+
+/* ── Differentiators List ────────────────────────────────────────── */
+.differentiators {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.diff-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  transition: var(--transition-fast);
+}
+
+.diff-item:hover {
+  border-color: var(--accent-gold);
+  background: var(--accent-gold-light);
+}
+
+.diff-item strong {
+  color: var(--text-primary);
+}
+
+.diff-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
 }

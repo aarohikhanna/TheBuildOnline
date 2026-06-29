@@ -62,91 +62,58 @@
   <main class="container section-padding console-dashboard">
     <div class="console-layout">
       
-      <!-- Left: Oscilloscope Deck panel -->
+      <!-- Left: Launch Teaser panel -->
       <div class="console-panel">
         
-        <!-- Oscilloscope simulated video player (16:9) -->
-        <div class="oscilloscope-player" id="oscilloscope-player">
+        <!-- Launch Hero Visual -->
+        <div class="oscilloscope-player launch-teaser" id="oscilloscope-player">
           <div class="player-grid-overlay"></div>
           
           <div class="player-status-row">
             <div class="status-indicator">
-              <span class="status-dot"></span>
-              <span>Now Playing</span>
+              <span class="status-dot" style="background: var(--accent-gold);"></span>
+              <span>Launching Soon</span>
             </div>
-            <div>The Build Story</div>
+            <div style="color: var(--accent-gold); font-size: 11px; font-weight: 700;">The Build Story</div>
           </div>
 
-          <!-- Oscilloscope vector waveform (Reacts/glows when class playing is toggled) -->
-          <svg class="soundwave-svg" viewBox="0 0 400 60">
+          <!-- Soundwave animation (always animated for teaser) -->
+          <svg class="soundwave-svg playing" viewBox="0 0 400 60">
             <path d="M 0,30 Q 20,30 40,30 T 80,30 T 120,30 T 160,30 T 200,30 T 240,30 T 280,30 T 320,30 T 360,30 T 400,30" id="oscilloscope-wave-path" />
           </svg>
 
-          <!-- Central Play button dial -->
-          <button class="player-dial play-pause-trigger" aria-label="Toggle console playback">
-            <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-          </button>
-
-          <!-- Cockpit timeline controls -->
-          <div class="console-player-controls">
-            <div class="timeline-seek-wrapper">
-              <span class="time-readout" id="current-time">00:00</span>
-              
-              <!-- Seeker progress bar -->
-              <div class="console-progress-track" id="progress-bar-container">
-                <div class="console-progress-fill" id="progress-bar-fill">
-                  <div class="console-progress-handle"></div>
-                </div>
-              </div>
-              
-              <span class="time-readout" id="duration-time">52:14</span>
-            </div>
-
-            <!-- Play speed and secondary triggers -->
-            <div class="console-control-row">
-              <div class="console-control-btns-left">
-                <button class="console-icon-btn play-pause-trigger" aria-label="Play/Pause Stream">
-                  <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                </button>
-                <span style="font-size: 10px; color: var(--text-muted);">Audio stream</span>
-              </div>
-              <div style="display: flex; gap: 8px;">
-                <button class="console-speed-dial" id="player-speed" aria-label="Adjust frequency speed">1x</button>
-              </div>
-            </div>
+          <!-- Teaser central message -->
+          <div class="teaser-center">
+            <p class="teaser-tagline">Episodes dropping soon</p>
+            <p class="teaser-sub">Be the first to know. Subscribe below.</p>
           </div>
         </div>
 
-        <!-- Details Output rows -->
+        <!-- Episode Details -->
         <div class="console-details-grid">
-          <span class="console-ep-tag" id="console-featured-num">Episode 04</span>
-          <h1 class="console-ep-title" id="console-featured-title">Zero to $100M ARR: The Art of Scaling Under Extreme Pressure</h1>
+          <span class="console-ep-tag" style="background: var(--accent-gold-light); color: var(--accent-gold);">Season 1</span>
+          <h1 class="console-ep-title">Real conversations with the founders who actually built it.</h1>
           
-          <!-- Guest metadata box -->
+          <!-- Host row -->
           <div class="guest-terminal-box">
-            <img class="guest-terminal-avatar" id="console-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200" alt="Elena Vance">
+            <img class="guest-terminal-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200" alt="Aarohi">
             <div class="guest-terminal-meta">
-              <h5 id="console-guest-name">Elena Vance</h5>
-              <p id="console-guest-role">Founder & CEO, ApexScale</p>
+              <h5>Aarohi</h5>
+              <p>Host &amp; Creator, The Build Story</p>
             </div>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 8px;">
-              <button id="open-sponsor-modal" class="btn btn-accent" style="font-size: 11px; padding: 6px 12px;">Sponsor Deck</button>
-              <button class="btn" style="font-size: 11px; padding: 6px 12px;" onclick="alert('Key takeaways copied!'); return false;">Copy notes</button>
+              <button id="open-sponsor-modal" class="btn btn-accent" style="font-size: 11px; padding: 6px 12px;">Sponsor the Show</button>
             </div>
           </div>
 
-          <!-- Description paragraph output -->
-          <p class="console-paragraph" id="console-desc-txt">Elena Vance pulls back the curtain on how ApexScale survived hypergrowth. She shares the exact mental models used to triage system failures, restructure executive teams, and pivot their GTM model in the middle of market shifts.</p>
+          <p class="console-paragraph">The Build Story launches with a lineup of real founders — no PR handlers, no rehearsed answers. Just honest conversations about what it actually took to build something from nothing.</p>
           
-          <!-- Monospace Specs Grid logs -->
+          <!-- Launch stats -->
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 16px; font-size: 11px; color: var(--text-muted);">
-            <div>Quality: <span id="console-log-frequency" style="color: var(--text-primary);">44.1 kHz</span></div>
-            <div>Bitrate: <span id="console-log-bitrate" style="color: var(--text-primary);">320 kbps</span></div>
-            <div>Topic: <span id="console-log-stage" style="color: var(--accent-gold); font-weight:700;">Scaling</span></div>
-            <div>Listens: <span id="console-log-listens" style="color: var(--text-primary);">4,822</span></div>
-            <div>Published: <span id="console-log-date" style="color: var(--text-primary);">Jun 26, 2026</span></div>
+            <div>Format: <span style="color: var(--text-primary);">Long-form Audio</span></div>
+            <div>Length: <span style="color: var(--text-primary);">45–70 min</span></div>
+            <div>Cadence: <span style="color: var(--accent-gold); font-weight:700;">Weekly</span></div>
+            <div>Platform: <span style="color: var(--text-primary);">Spotify · Apple · YouTube</span></div>
           </div>
 
         </div>
@@ -182,25 +149,53 @@
       <!-- About the Podcast -->
       <div class="about-pod-block">
         <div class="about-pod-label">About the Show</div>
-        <h2 class="about-pod-heading">Real founders. Raw stories. <span class="gold-text">Unfiltered builds.</span></h2>
+        <h2 class="about-pod-heading">Not another founder podcast. <span class="gold-text">The real ones.</span></h2>
         <p class="about-pod-body">
-          The Build Story is a founder-led podcast that goes behind the scenes of the startup journey — from zero-revenue pre-product days all the way through hypergrowth, pivots, and exits. No polished PR narratives. Just the real mechanics of what it takes to build something that lasts.
+          Most founder podcasts tell you what worked after the dust settles. The Build Story is different — we get in the room <em>while it's still messy</em>. Aarohi sits down with builders mid-journey, not post-exit, to pull out the thinking, the pivots, and the hard lessons that never make the highlight reel.
         </p>
+
+        <div class="differentiators">
+          <div class="diff-item">
+            <span class="diff-icon">🎯</span>
+            <div>
+              <strong>No PR handlers.</strong> Guests come without scripts. You get the unfiltered version.
+            </div>
+          </div>
+          <div class="diff-item">
+            <span class="diff-icon">📊</span>
+            <div>
+              <strong>Specific, not vague.</strong> Every episode ends with exact frameworks, numbers, and decisions you can use.
+            </div>
+          </div>
+          <div class="diff-item">
+            <span class="diff-icon">🔍</span>
+            <div>
+              <strong>Depth over volume.</strong> One guest. One hour. No interruptions. The whole story.
+            </div>
+          </div>
+          <div class="diff-item">
+            <span class="diff-icon">🔗</span>
+            <div>
+              <strong>Built for doers.</strong> For founders, operators, and builders who are in it — not just curious about it.
+            </div>
+          </div>
+        </div>
+
         <div class="about-pod-stats">
           <div class="stat-chip">
-            <span class="stat-num">50+</span>
-            <span class="stat-label">EPISODES</span>
+            <span class="stat-num">S1</span>
+            <span class="stat-label">SEASON 1</span>
           </div>
           <div class="stat-chip">
-            <span class="stat-num">1M+</span>
-            <span class="stat-label">LISTENS</span>
+            <span class="stat-num">Weekly</span>
+            <span class="stat-label">NEW EPISODES</span>
           </div>
           <div class="stat-chip">
-            <span class="stat-num">WEEKLY</span>
-            <span class="stat-label">CADENCE</span>
+            <span class="stat-num">Free</span>
+            <span class="stat-label">ALWAYS</span>
           </div>
           <div class="stat-chip">
-            <span class="stat-num">GLOBAL</span>
+            <span class="stat-num">Global</span>
             <span class="stat-label">AUDIENCE</span>
           </div>
         </div>
