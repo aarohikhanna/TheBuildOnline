@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Build Story // Founder-Console Terminal</title>
-  <meta name="description" content="A premium tech noir console deconstructing startup scaling, bootstrapping, pivots, and hardware mechanics. Made for builders and founders.">
+  <title>The Build Story — Hosted by Aarohi</title>
+  <meta name="description" content="The Build Story is a founder-led podcast hosted by Aarohi. Real conversations with builders on scaling, fundraising, and what it actually takes to build something that lasts.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
       <div class="console-search-bar">
         <span class="console-prompt-symbol">&gt; search:</span>
         <form id="console-search-form" style="display: flex; flex-grow: 1; align-items: center;">
-          <input type="text" id="console-search-input" class="console-search-input" placeholder="filter_logs --query=..." aria-label="Terminal Search">
+          <input type="text" id="console-search-input" class="console-search-input" placeholder="Search episodes..." aria-label="Search episodes">
           <button type="submit" class="console-search-btn" aria-label="Execute search">
             <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -51,8 +51,8 @@
           </svg>
         </button>
         <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
-          <span style="font-size: 11px; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">[ NODE_04 // ON ]</span>
-          <span style="font-size: 10px; color: var(--text-muted); letter-spacing: 0.05em;">HOSTED BY <span style="color: var(--text-secondary);">AAROHI</span></span>
+          <span style="font-size: 11px; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Now Playing</span>
+          <span style="font-size: 10px; color: var(--text-muted); letter-spacing: 0.05em;">Hosted by <span style="color: var(--text-secondary);">Aarohi</span></span>
         </div>
       </div>
     </div>
@@ -72,9 +72,9 @@
           <div class="player-status-row">
             <div class="status-indicator">
               <span class="status-dot"></span>
-              <span>CONSOLE_LIVE</span>
+              <span>Now Playing</span>
             </div>
-            <div>[ FREQ_BAND // GOLD_BAND ]</div>
+            <div>The Build Story</div>
           </div>
 
           <!-- Oscilloscope vector waveform (Reacts/glows when class playing is toggled) -->
@@ -110,7 +110,7 @@
                   <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                   <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
                 </button>
-                <span style="font-size: 10px; color: var(--text-muted);">SOURCE: STREAM_DECK_04</span>
+                <span style="font-size: 10px; color: var(--text-muted);">Audio stream</span>
               </div>
               <div style="display: flex; gap: 8px;">
                 <button class="console-speed-dial" id="player-speed" aria-label="Adjust frequency speed">1x</button>
@@ -121,7 +121,7 @@
 
         <!-- Details Output rows -->
         <div class="console-details-grid">
-          <span class="console-ep-tag" id="console-featured-num">[ EP_04 ]</span>
+          <span class="console-ep-tag" id="console-featured-num">Episode 04</span>
           <h1 class="console-ep-title" id="console-featured-title">Zero to $100M ARR: The Art of Scaling Under Extreme Pressure</h1>
           
           <!-- Guest metadata box -->
@@ -133,7 +133,7 @@
             </div>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 8px;">
               <button id="open-sponsor-modal" class="btn btn-accent" style="font-size: 11px; padding: 6px 12px;">Sponsor Deck</button>
-              <button class="btn" style="font-size: 11px; padding: 6px 12px;" onclick="alert('Takeaway blueprint copied to logs!'); return false;">Copy logs</button>
+              <button class="btn" style="font-size: 11px; padding: 6px 12px;" onclick="alert('Key takeaways copied!'); return false;">Copy notes</button>
             </div>
           </div>
 
@@ -142,11 +142,11 @@
           
           <!-- Monospace Specs Grid logs -->
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 16px; font-size: 11px; color: var(--text-muted);">
-            <div>FREQ: <span id="console-log-frequency" style="color: var(--text-primary);">44.1 KHZ</span></div>
-            <div>BITRATE: <span id="console-log-bitrate" style="color: var(--text-primary);">320 KBPS</span></div>
-            <div>STAGE: <span id="console-log-stage" style="color: var(--accent-gold); font-weight:700;">VC_SCALING</span></div>
-            <div>AUD_METRIC: <span id="console-log-listens" style="color: var(--text-primary);">4,822 LSTN</span></div>
-            <div>LOG_DATE: <span id="console-log-date" style="color: var(--text-primary);">2026.06.26</span></div>
+            <div>Quality: <span id="console-log-frequency" style="color: var(--text-primary);">44.1 kHz</span></div>
+            <div>Bitrate: <span id="console-log-bitrate" style="color: var(--text-primary);">320 kbps</span></div>
+            <div>Topic: <span id="console-log-stage" style="color: var(--accent-gold); font-weight:700;">Scaling</span></div>
+            <div>Listens: <span id="console-log-listens" style="color: var(--text-primary);">4,822</span></div>
+            <div>Published: <span id="console-log-date" style="color: var(--text-primary);">Jun 26, 2026</span></div>
           </div>
 
         </div>
@@ -158,19 +158,19 @@
         
         <!-- Sidebar Box 1: Newsletter -->
         <div class="sidebar-panel">
-          <div class="panel-header">[ SEC_UPLINK: STARTUP_GOLD ]</div>
-          <p class="panel-text">Subscribe weekly to secure key operational blueprints, founder frameworks, and execution summaries synced straight to your dev deck.</p>
+          <div class="panel-header">Newsletter</div>
+          <p class="panel-text">Get weekly founder insights, key takeaways, and episode summaries delivered straight to your inbox.</p>
           <form class="terminal-form" id="terminal-newsletter-form">
-            <input type="email" class="terminal-input" placeholder="founder@company.com" required aria-label="Uplink email">
-            <button type="submit" class="btn btn-primary" style="padding: 8px; font-size: 12px;">ESTABLISH_UPLINK</button>
+            <input type="email" class="terminal-input" placeholder="your@email.com" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary" style="padding: 8px; font-size: 12px;">Subscribe</button>
           </form>
         </div>
 
         <!-- Sidebar Box 2: Inner Circle -->
         <div class="sidebar-panel">
-          <div class="panel-header">[ SEC_UPLINK: BUILDERS_CIRCLE ]</div>
-          <p class="panel-text">Secure an exclusive invitation to exchange codebase stacks, financial sheets, and operational triage lists with audited builders.</p>
-          <button class="btn btn-secondary" style="width: 100%; font-size: 12px; padding: 8px;" onclick="alert('Uplink credentials pending. Invitation link will sync via newsletter logs.'); return false;">INIT_ACCESS_REQUEST</button>
+          <div class="panel-header">Builders Circle</div>
+          <p class="panel-text">Get an exclusive invite to connect with fellow founders — share real numbers, frameworks, and lessons from the trenches.</p>
+          <button class="btn btn-secondary" style="width: 100%; font-size: 12px; padding: 8px;" onclick="alert('Request received! Check your email for an invite link.'); return false;">Request an Invite</button>
         </div>
 
       </div>
@@ -181,7 +181,7 @@
 
       <!-- About the Podcast -->
       <div class="about-pod-block">
-        <div class="about-pod-label">[ ABOUT: THE_BUILD_STORY ]</div>
+        <div class="about-pod-label">About the Show</div>
         <h2 class="about-pod-heading">Real founders. Raw stories. <span class="gold-text">Unfiltered builds.</span></h2>
         <p class="about-pod-body">
           The Build Story is a founder-led podcast that goes behind the scenes of the startup journey — from zero-revenue pre-product days all the way through hypergrowth, pivots, and exits. No polished PR narratives. Just the real mechanics of what it takes to build something that lasts.
@@ -208,7 +208,7 @@
 
       <!-- Host Card -->
       <div class="host-card">
-        <div class="host-card-top-label">[ HOST_PROFILE ]</div>
+        <div class="host-card-top-label">Your Host</div>
         <div class="host-card-inner">
           <div class="host-avatar-ring">
             <img
@@ -244,13 +244,13 @@
     <div id="catalog-tabs-anchor" style="padding-top: 40px;">
       <!-- Monospace directory tabs -->
       <div class="directory-tabs">
-        <button class="tab-btn active" data-tag="All">/root/all_episodes</button>
-        <button class="tab-btn" data-tag="Scaling">/root/scaling</button>
-        <button class="tab-btn" data-tag="SaaS">/root/saas</button>
-        <button class="tab-btn" data-tag="Bootstrapping">/root/bootstrapped</button>
-        <button class="tab-btn" data-tag="Funding">/root/funding</button>
-        <button class="tab-btn" data-tag="AI">/root/artificial_intel</button>
-        <button class="tab-btn" data-tag="Hardware">/root/hardware_ops</button>
+        <button class="tab-btn active" data-tag="All">All Episodes</button>
+        <button class="tab-btn" data-tag="Scaling">Scaling</button>
+        <button class="tab-btn" data-tag="SaaS">SaaS</button>
+        <button class="tab-btn" data-tag="Bootstrapping">Bootstrapping</button>
+        <button class="tab-btn" data-tag="Funding">Funding</button>
+        <button class="tab-btn" data-tag="AI">AI</button>
+        <button class="tab-btn" data-tag="Hardware">Hardware</button>
       </div>
 
       <!-- Catalog grid feed -->
@@ -265,7 +265,7 @@
   <div class="drawer" id="drawer" data-active-id="">
     <div class="drawer-header">
       <div class="drawer-title-area">
-        <h3>[ OUTPUT_STREAM: LOGS ]</h3>
+        <h3>Episode Details</h3>
       </div>
       <button class="drawer-close-btn" id="drawer-close" aria-label="Close terminal logs">✕</button>
     </div>
@@ -280,15 +280,15 @@
       <div class="drawer-listen-strip">
         <div style="display: flex; align-items: center; gap: 8px;">
           <button class="btn btn-primary" id="drawer-play-btn" style="padding: 6px 12px; font-size: 11px;" aria-label="Execute playback">
-            <span id="drawer-play-text">RUN_TRACK</span>
+            <span id="drawer-play-text">▶ Play Episode</span>
           </button>
         </div>
-        <span style="font-size: 10px; color: var(--text-muted);">SOURCE: FLAC_STREAM</span>
+        <span style="font-size: 10px; color: var(--text-muted);">High quality audio</span>
       </div>
 
       <!-- Guest Profile details -->
       <div class="drawer-section">
-        <span class="drawer-section-title">AUDITED_GUEST</span>
+        <span class="drawer-section-title">Guest</span>
         <div class="drawer-guest-box">
           <img class="drawer-guest-avatar" id="drawer-guest-img" src="" alt="Guest avatar">
           <div class="drawer-guest-bio-txt">
@@ -301,7 +301,7 @@
 
       <!-- Key Takeaways ("Startup Gold") -->
       <div class="drawer-section">
-        <span class="drawer-section-title">STARTUP_GOLD_BLUEPRINTS</span>
+        <span class="drawer-section-title">Key Takeaways</span>
         <ul class="drawer-takeaways" id="drawer-takeaways">
           <!-- dynamically populated -->
         </ul>
@@ -309,7 +309,7 @@
 
       <!-- Chapters jumps -->
       <div class="drawer-section">
-        <span class="drawer-section-title">TIMELINE_CHAPTERS</span>
+        <span class="drawer-section-title">Chapters</span>
         <div id="drawer-chapters">
           <!-- dynamically populated -->
         </div>
@@ -317,7 +317,7 @@
 
       <!-- Resources Links -->
       <div class="drawer-section">
-        <span class="drawer-section-title">RESOURCES_LOGGED</span>
+        <span class="drawer-section-title">Resources</span>
         <ul class="drawer-links" id="drawer-resources">
           <!-- dynamically populated -->
         </ul>
@@ -329,7 +329,7 @@
   <div class="modal-overlay" id="sponsor-modal-overlay">
     <div class="modal">
       <div class="modal-header">
-        <h3 style="font-size: 14px;">[ INIT_SPONSOR_UPLINK ]</h3>
+        <h3 style="font-size: 14px;">Become a Sponsor</h3>
         <button class="modal-close-btn" id="sponsor-modal-close" aria-label="Halt form application">✕</button>
       </div>
       
@@ -344,22 +344,22 @@
             <input type="email" id="sponsor-email" required placeholder="john@company.com">
           </div>
           <div class="form-group">
-            <label for="sponsor-company">Company / Node Name</label>
+            <label for="sponsor-company">Company Name</label>
             <input type="text" id="sponsor-company" required placeholder="e.g. Acme Corp">
           </div>
           <div class="form-group">
             <label for="sponsor-message">Sponsorship Goal Details</label>
-            <textarea id="sponsor-message" rows="3" required placeholder="Outline target sectors and budget parameters..."></textarea>
+            <textarea id="sponsor-message" rows="3" required placeholder="Tell us about your sponsorship goals and budget..."></textarea>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">[ SECURE_UPLINK ]</button>
+          <button type="submit" class="btn btn-primary">Submit Application</button>
         </div>
       </form>
 
       <div class="modal-success-screen" id="sponsor-success">
-        <h3>[ UPLINK_RECEIVED: SUCCESS ]</h3>
-        <p style="margin-top: 8px;">A review manager will evaluate your application specs and establish contact within 48 hours.</p>
+        <h3>Application Received!</h3>
+        <p style="margin-top: 8px;">We'll review your application and get back to you within 48 hours.</p>
       </div>
     </div>
   </div>
@@ -392,10 +392,10 @@
       </div>
       
       <div class="footer-bottom">
-        <p>[ CONSOLE: V4.1_SECURE ] &copy; 2026 The Build Story. Audited blueprints compiled.</p>
+        <p>&copy; 2026 The Build Story. Hosted by Aarohi.</p>
         <ul class="footer-links">
-          <li><a href="#catalog-tabs-anchor">/root/episodes</a></li>
-          <li><a href="#open-sponsor-modal">/root/sponsors</a></li>
+          <li><a href="#catalog-tabs-anchor">Episodes</a></li>
+          <li><a href="#open-sponsor-modal">Sponsor</a></li>
         </ul>
       </div>
     </div>

@@ -4,7 +4,7 @@
 const episodes = [
   {
     id: "ep-04",
-    number: "EP_04",
+    number: "Episode 04",
     title: "Zero to $100M ARR: The Art of Scaling Under Extreme Pressure",
     guest: "Elena Vance",
     guestRole: "Founder & CEO, ApexScale",
@@ -13,11 +13,11 @@ const episodes = [
     description: "Elena Vance pulls back the curtain on how ApexScale survived hypergrowth. She shares the exact mental models used to triage system failures, restructure executive teams, and pivot their GTM model in the middle of market shifts.",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
     duration: "52:14",
-    frequency: "44.1 KHZ",
-    bitrate: "320 KBPS",
-    listenCount: "4,822 LSTN",
-    published: "2026.06.26",
-    stage: "VC_SCALING",
+    frequency: "44.1 kHz",
+    bitrate: "320 kbps",
+    listenCount: "4,822",
+    published: "Jun 26, 2026",
+    stage: "Scaling",
     tags: ["Scaling", "SaaS", "Funding"],
     takeaways: [
       "The 3x Rule: Systems break every time you triple in size. Design architecture for 10x but build for 3x.",
@@ -25,20 +25,20 @@ const episodes = [
       "The 'Weekly Triage': Spend Mondays writing down the three biggest fires. Ignore everything else until they are out."
     ],
     chapters: [
-      { time: "00:00", seconds: 0, title: "SYS_INIT // ApexScale Origins" },
-      { time: "12:15", seconds: 735, title: "FAIL_RECOVER // Surviving Hypergrowth Fires" },
-      { time: "25:40", seconds: 1540, title: "EXEC_COMPILE // Hiring Executive Operators" },
-      { time: "42:10", seconds: 2530, title: "FOUNDER_DECK // Direct Advice to Builders" }
+      { time: "00:00", seconds: 0, title: "ApexScale Origins" },
+      { time: "12:15", seconds: 735, title: "Surviving Hypergrowth Fires" },
+      { time: "25:40", seconds: 1540, title: "Hiring Executive Operators" },
+      { time: "42:10", seconds: 2530, title: "Direct Advice to Builders" }
     ],
     resources: [
-      { label: "ApexScale Official System", url: "#" },
+      { label: "ApexScale Official Site", url: "#" },
       { label: "Book: High Output Management", url: "#" },
       { label: "Vance Essay: Scaling the Messy Middle", url: "#" }
     ]
   },
   {
     id: "ep-03",
-    number: "EP_03",
+    number: "Episode 03",
     title: "Bootstrapping to $10M ARR: The Power of Ruthless Focus",
     guest: "Marcus Chen",
     guestRole: "Co-Founder, FlowDraft",
@@ -47,11 +47,11 @@ const episodes = [
     description: "How do you build a product that customers gladly pay for on Day 1? Marcus outlines how he built FlowDraft to $10M ARR without taking a single dollar of venture capital.",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
     duration: "41:05",
-    frequency: "48.0 KHZ",
-    bitrate: "320 KBPS",
-    listenCount: "9,255 LSTN",
-    published: "2026.06.18",
-    stage: "BOOTSTRAPPED",
+    frequency: "48.0 kHz",
+    bitrate: "320 kbps",
+    listenCount: "9,255",
+    published: "Jun 18, 2026",
+    stage: "Bootstrapped",
     tags: ["Bootstrapping", "SaaS", "Productivity"],
     takeaways: [
       "Charging from Day 1 is the ultimate validation metric. If they won't pay, it's not a real problem.",
@@ -59,19 +59,19 @@ const episodes = [
       "Why profitability gives you the ultimate startup superpower: Time."
     ],
     chapters: [
-      { time: "00:00", seconds: 0, title: "VAL_CHECK // Bootstrap Over VC Funding" },
-      { time: "08:30", seconds: 510, title: "CLIENT_LOAD // Securing First 100 Payments" },
-      { time: "18:45", seconds: 1125, title: "OPS_OPTIMIZE // Tiny Team Support Scaling" },
-      { time: "32:10", seconds: 1930, title: "FIN_SUMMARY // Math of $10M ARR Self-Funding" }
+      { time: "00:00", seconds: 0, title: "Bootstrap vs VC Funding" },
+      { time: "08:30", seconds: 510, title: "Securing Your First 100 Paying Customers" },
+      { time: "18:45", seconds: 1125, title: "Running a Tiny Team at Scale" },
+      { time: "32:10", seconds: 1930, title: "The Math of $10M ARR Self-Funded" }
     ],
     resources: [
-      { label: "FlowDraft System Stack", url: "#" },
+      { label: "FlowDraft Product", url: "#" },
       { label: "Chen Newsletter: Bootstrapped Blueprints", url: "#" }
     ]
   },
   {
     id: "ep-02",
-    number: "EP_02",
+    number: "Episode 02",
     title: "The Hardest Pivot: Navigating a Dying Market",
     guest: "Sarah Jenkins",
     guestRole: "Co-Founder, Retrace AI",
@@ -80,11 +80,11 @@ const episodes = [
     description: "Sometimes the market changes beneath you. Sarah discusses the emotional and operational challenges of pivoting her entire team, returning capital to some investors, and building a new engine.",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
     duration: "38:40",
-    frequency: "44.1 KHZ",
-    bitrate: "256 KBPS",
-    listenCount: "3,110 LSTN",
-    published: "2026.06.10",
-    stage: "PIVOT_STAGE",
+    frequency: "44.1 kHz",
+    bitrate: "256 kbps",
+    listenCount: "3,110",
+    published: "Jun 10, 2026",
+    stage: "Pivot",
     tags: ["Pivot", "AI", "Funding"],
     takeaways: [
       "A pivot is not a failure; staying in a dying market is.",
@@ -92,19 +92,19 @@ const episodes = [
       "Re-engaging investors: Translating lessons from the old model to energy for the new one."
     ],
     chapters: [
-      { time: "00:00", seconds: 0, title: "SYS_ALERT // Signs of Market Decay" },
-      { time: "10:15", seconds: 615, title: "CORE_MUTATE // The Pivot Decision Meeting" },
-      { time: "22:50", seconds: 1370, title: "STACK_REBUILD // Redesigning Tech Around AI" },
-      { time: "33:00", seconds: 1980, title: "GROWTH_LOGS // Post-Pivot Success Metrics" }
+      { time: "00:00", seconds: 0, title: "Signs of Market Decay" },
+      { time: "10:15", seconds: 615, title: "Making the Pivot Decision" },
+      { time: "22:50", seconds: 1370, title: "Rebuilding Around AI" },
+      { time: "33:00", seconds: 1980, title: "Post-Pivot Growth" }
     ],
     resources: [
-      { label: "Retrace AI Platform Docs", url: "#" },
+      { label: "Retrace AI Platform", url: "#" },
       { label: "Jenkins Essay: When to Shift Stack", url: "#" }
     ]
   },
   {
     id: "ep-01",
-    number: "EP_01",
+    number: "Episode 01",
     title: "Building in Hardware: Capital Efficiency in a Physical World",
     guest: "David Kovacs",
     guestRole: "Founder, LightSpeed Robotics",
@@ -113,11 +113,11 @@ const episodes = [
     description: "Hardware is hard, but it doesn't have to be capital inefficient. David outlines how LightSpeed Robotics built their MVP robots with minimal capital and secured hardware pre-sales.",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
     duration: "45:22",
-    frequency: "48.0 KHZ",
-    bitrate: "320 KBPS",
-    listenCount: "1,940 LSTN",
-    published: "2026.06.01",
-    stage: "HARDWARE_OPS",
+    frequency: "48.0 kHz",
+    bitrate: "320 kbps",
+    listenCount: "1,940",
+    published: "Jun 1, 2026",
+    stage: "Hardware",
     tags: ["Hardware", "Funding", "Operations"],
     takeaways: [
       "Simulation first: Invest heavily in virtual modeling before cutting metal.",
@@ -125,13 +125,13 @@ const episodes = [
       "Setting up supply chains that are resilient to international logistics friction."
     ],
     chapters: [
-      { time: "00:00", seconds: 0, title: "LEAN_MECH // Avoiding Capital-Heavy Hardware traps" },
-      { time: "11:20", seconds: 680, title: "CORE_ASSEMBLE // Building MVP under $20k" },
-      { time: "24:45", seconds: 1485, title: "VAL_SECURE // Securing Retailer Commitments" },
-      { time: "38:10", seconds: 2290, title: "NOTCH_TEST // Rapid Prototyping Lessons" }
+      { time: "00:00", seconds: 0, title: "Avoiding Capital-Heavy Hardware Traps" },
+      { time: "11:20", seconds: 680, title: "Building an MVP Under $20k" },
+      { time: "24:45", seconds: 1485, title: "Securing Retailer Commitments" },
+      { time: "38:10", seconds: 2290, title: "Rapid Prototyping Lessons" }
     ],
     resources: [
-      { label: "LightSpeed Robotics Automation Suite", url: "#" },
+      { label: "LightSpeed Robotics", url: "#" },
       { label: "Kovacs Course: Lean Hardware Systems", url: "#" }
     ]
   }
