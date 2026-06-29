@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Build Story // Founder-Console Terminal</title>
+  <meta name="description" content="A premium tech noir console deconstructing startup scaling, bootstrapping, pivots, and hardware mechanics. Made for builders and founders.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tech Console Header -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo-link">
+        <!-- Technical Vector outline Logo SVG matching image_2.png -->
+        <svg class="logo-icon" viewBox="0 0 500 500" width="32" height="32">
+          <path d="M 285,100 C 180,95 90,175 90,270 C 90,320 110,360 140,390 L 115,445 L 190,425 C 210,432 230,435 250,435 C 340,435 415,365 419,275" stroke="currentColor" stroke-width="24" stroke-linecap="round" fill="none" stroke-linejoin="round" />
+          <path d="M 250,230 L 285,230 L 285,190 L 325,190 L 325,150 L 365,150 L 365,110 L 405,110" stroke="var(--accent-gold)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <polygon points="405,110 405,65 445,80 405,95" fill="var(--accent-gold)" />
+          <line x1="405" y1="95" x2="405" y2="110" stroke="var(--accent-gold)" stroke-width="8" stroke-linecap="round" />
+          <path d="M 250,310 L 250,370 M 210,375 L 290,375" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <path d="M 205,250 C 205,320 295,320 295,250" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <rect x="222" y="170" width="56" height="100" rx="28" fill="currentColor" />
+        </svg>
+        <span class="logo-text">THE <strong>BUILD</strong> STORY</span>
+      </a>
+
+      <!-- Terminal command search input in Nav -->
+      <div class="console-search-bar">
+        <span class="console-prompt-symbol">&gt; search:</span>
+        <form id="console-search-form" style="display: flex; flex-grow: 1; align-items: center;">
+          <input type="text" id="console-search-input" class="console-search-input" placeholder="filter_logs --query=..." aria-label="Terminal Search">
+          <button type="submit" class="console-search-btn" aria-label="Execute search">
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Console Theme">
+          <!-- Light Theme Blueprint icon -->
+          <svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+          </svg>
+          <!-- Dark Theme Carbon icon -->
+          <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"></path>
+          </svg>
+        </button>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">[ NODE_04 // ON ]</span>
+          <span style="font-size: 10px; color: var(--text-muted); letter-spacing: 0.05em;">HOSTED BY <span style="color: var(--text-secondary);">AAROHI</span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cockpit Console Dashboard -->
+  <main class="container section-padding console-dashboard">
+    <div class="console-layout">
+      
+      <!-- Left: Oscilloscope Deck panel -->
+      <div class="console-panel">
+        
+        <!-- Oscilloscope simulated video player (16:9) -->
+        <div class="oscilloscope-player" id="oscilloscope-player">
+          <div class="player-grid-overlay"></div>
+          
+          <div class="player-status-row">
+            <div class="status-indicator">
+              <span class="status-dot"></span>
+              <span>CONSOLE_LIVE</span>
+            </div>
+            <div>[ FREQ_BAND // GOLD_BAND ]</div>
+          </div>
+
+          <!-- Oscilloscope vector waveform (Reacts/glows when class playing is toggled) -->
+          <svg class="soundwave-svg" viewBox="0 0 400 60">
+            <path d="M 0,30 Q 20,30 40,30 T 80,30 T 120,30 T 160,30 T 200,30 T 240,30 T 280,30 T 320,30 T 360,30 T 400,30" id="oscilloscope-wave-path" />
+          </svg>
+
+          <!-- Central Play button dial -->
+          <button class="player-dial play-pause-trigger" aria-label="Toggle console playback">
+            <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+
+          <!-- Cockpit timeline controls -->
+          <div class="console-player-controls">
+            <div class="timeline-seek-wrapper">
+              <span class="time-readout" id="current-time">00:00</span>
+              
+              <!-- Seeker progress bar -->
+              <div class="console-progress-track" id="progress-bar-container">
+                <div class="console-progress-fill" id="progress-bar-fill">
+                  <div class="console-progress-handle"></div>
+                </div>
+              </div>
+              
+              <span class="time-readout" id="duration-time">52:14</span>
+            </div>
+
+            <!-- Play speed and secondary triggers -->
+            <div class="console-control-row">
+              <div class="console-control-btns-left">
+                <button class="console-icon-btn play-pause-trigger" aria-label="Play/Pause Stream">
+                  <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+                <span style="font-size: 10px; color: var(--text-muted);">SOURCE: STREAM_DECK_04</span>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="console-speed-dial" id="player-speed" aria-label="Adjust frequency speed">1x</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details Output rows -->
+        <div class="console-details-grid">
+          <span class="console-ep-tag" id="console-featured-num">[ EP_04 ]</span>
+          <h1 class="console-ep-title" id="console-featured-title">Zero to $100M ARR: The Art of Scaling Under Extreme Pressure</h1>
+          
+          <!-- Guest metadata box -->
+          <div class="guest-terminal-box">
+            <img class="guest-terminal-avatar" id="console-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200" alt="Elena Vance">
+            <div class="guest-terminal-meta">
+              <h5 id="console-guest-name">Elena Vance</h5>
+              <p id="console-guest-role">Founder & CEO, ApexScale</p>
+            </div>
+            <div style="margin-left: auto; display: flex; align-items: center; gap: 8px;">
+              <button id="open-sponsor-modal" class="btn btn-accent" style="font-size: 11px; padding: 6px 12px;">Sponsor Deck</button>
+              <button class="btn" style="font-size: 11px; padding: 6px 12px;" onclick="alert('Takeaway blueprint copied to logs!'); return false;">Copy logs</button>
+            </div>
+          </div>
+
+          <!-- Description paragraph output -->
+          <p class="console-paragraph" id="console-desc-txt">Elena Vance pulls back the curtain on how ApexScale survived hypergrowth. She shares the exact mental models used to triage system failures, restructure executive teams, and pivot their GTM model in the middle of market shifts.</p>
+          
+          <!-- Monospace Specs Grid logs -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 16px; font-size: 11px; color: var(--text-muted);">
+            <div>FREQ: <span id="console-log-frequency" style="color: var(--text-primary);">44.1 KHZ</span></div>
+            <div>BITRATE: <span id="console-log-bitrate" style="color: var(--text-primary);">320 KBPS</span></div>
+            <div>STAGE: <span id="console-log-stage" style="color: var(--accent-gold); font-weight:700;">VC_SCALING</span></div>
+            <div>AUD_METRIC: <span id="console-log-listens" style="color: var(--text-primary);">4,822 LSTN</span></div>
+            <div>LOG_DATE: <span id="console-log-date" style="color: var(--text-primary);">2026.06.26</span></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right: Technical Sidebar widgets -->
+      <div class="console-sidebar">
+        
+        <!-- Sidebar Box 1: Newsletter -->
+        <div class="sidebar-panel">
+          <div class="panel-header">[ SEC_UPLINK: STARTUP_GOLD ]</div>
+          <p class="panel-text">Subscribe weekly to secure key operational blueprints, founder frameworks, and execution summaries synced straight to your dev deck.</p>
+          <form class="terminal-form" id="terminal-newsletter-form">
+            <input type="email" class="terminal-input" placeholder="founder@company.com" required aria-label="Uplink email">
+            <button type="submit" class="btn btn-primary" style="padding: 8px; font-size: 12px;">ESTABLISH_UPLINK</button>
+          </form>
+        </div>
+
+        <!-- Sidebar Box 2: Inner Circle -->
+        <div class="sidebar-panel">
+          <div class="panel-header">[ SEC_UPLINK: BUILDERS_CIRCLE ]</div>
+          <p class="panel-text">Secure an exclusive invitation to exchange codebase stacks, financial sheets, and operational triage lists with audited builders.</p>
+          <button class="btn btn-secondary" style="width: 100%; font-size: 12px; padding: 8px;" onclick="alert('Uplink credentials pending. Invitation link will sync via newsletter logs.'); return false;">INIT_ACCESS_REQUEST</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Host + About Section -->
+    <div class="host-about-section">
+
+      <!-- About the Podcast -->
+      <div class="about-pod-block">
+        <div class="about-pod-label">[ ABOUT: THE_BUILD_STORY ]</div>
+        <h2 class="about-pod-heading">Real founders. Raw stories. <span class="gold-text">Unfiltered builds.</span></h2>
+        <p class="about-pod-body">
+          The Build Story is a founder-led podcast that goes behind the scenes of the startup journey — from zero-revenue pre-product days all the way through hypergrowth, pivots, and exits. No polished PR narratives. Just the real mechanics of what it takes to build something that lasts.
+        </p>
+        <div class="about-pod-stats">
+          <div class="stat-chip">
+            <span class="stat-num">50+</span>
+            <span class="stat-label">EPISODES</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-num">1M+</span>
+            <span class="stat-label">LISTENS</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-num">WEEKLY</span>
+            <span class="stat-label">CADENCE</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-num">GLOBAL</span>
+            <span class="stat-label">AUDIENCE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Host Card -->
+      <div class="host-card">
+        <div class="host-card-top-label">[ HOST_PROFILE ]</div>
+        <div class="host-card-inner">
+          <div class="host-avatar-ring">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200"
+              alt="Aarohi – Host of The Build Story"
+              class="host-avatar-img"
+            />
+            <div class="host-avatar-badge">HOST</div>
+          </div>
+          <div class="host-bio">
+            <h3 class="host-name">Aarohi</h3>
+            <p class="host-role">Founder &amp; Host, The Build Story</p>
+            <p class="host-desc">
+              Aarohi interviews the world's most ambitious builders — dissecting their decisions, frameworks, and failures to extract the playbooks that actually move companies forward.
+            </p>
+            <div class="host-socials">
+              <a href="#" class="host-social-pill" aria-label="Aarohi on LinkedIn">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="#" class="host-social-pill" aria-label="Aarohi on Twitter">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Twitter / X
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Episodes Grid section -->
+    <div id="catalog-tabs-anchor" style="padding-top: 40px;">
+      <!-- Monospace directory tabs -->
+      <div class="directory-tabs">
+        <button class="tab-btn active" data-tag="All">/root/all_episodes</button>
+        <button class="tab-btn" data-tag="Scaling">/root/scaling</button>
+        <button class="tab-btn" data-tag="SaaS">/root/saas</button>
+        <button class="tab-btn" data-tag="Bootstrapping">/root/bootstrapped</button>
+        <button class="tab-btn" data-tag="Funding">/root/funding</button>
+        <button class="tab-btn" data-tag="AI">/root/artificial_intel</button>
+        <button class="tab-btn" data-tag="Hardware">/root/hardware_ops</button>
+      </div>
+
+      <!-- Catalog grid feed -->
+      <div class="episodes-grid" id="episodes-grid">
+        <!-- Dynamic rendering via app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Console Sliding Side Drawer overlay -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <div class="drawer" id="drawer" data-active-id="">
+    <div class="drawer-header">
+      <div class="drawer-title-area">
+        <h3>[ OUTPUT_STREAM: LOGS ]</h3>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close" aria-label="Close terminal logs">✕</button>
+    </div>
+    
+    <div class="drawer-content">
+      <div class="drawer-section">
+        <h2 id="drawer-title" style="font-size: 18px; margin-bottom: 8px;">Episode Title</h2>
+        <p id="drawer-desc" style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;"></p>
+      </div>
+
+      <!-- Play/Pause console action trigger -->
+      <div class="drawer-listen-strip">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button class="btn btn-primary" id="drawer-play-btn" style="padding: 6px 12px; font-size: 11px;" aria-label="Execute playback">
+            <span id="drawer-play-text">RUN_TRACK</span>
+          </button>
+        </div>
+        <span style="font-size: 10px; color: var(--text-muted);">SOURCE: FLAC_STREAM</span>
+      </div>
+
+      <!-- Guest Profile details -->
+      <div class="drawer-section">
+        <span class="drawer-section-title">AUDITED_GUEST</span>
+        <div class="drawer-guest-box">
+          <img class="drawer-guest-avatar" id="drawer-guest-img" src="" alt="Guest avatar">
+          <div class="drawer-guest-bio-txt">
+            <h4 id="drawer-guest-name">Guest Name</h4>
+            <p id="drawer-guest-role" style="color: var(--accent-gold); font-size: 11px; font-weight: 700;"></p>
+            <p id="drawer-guest-bio" style="margin-top: 6px; font-size: 12px; color: var(--text-secondary);"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Takeaways ("Startup Gold") -->
+      <div class="drawer-section">
+        <span class="drawer-section-title">STARTUP_GOLD_BLUEPRINTS</span>
+        <ul class="drawer-takeaways" id="drawer-takeaways">
+          <!-- dynamically populated -->
+        </ul>
+      </div>
+
+      <!-- Chapters jumps -->
+      <div class="drawer-section">
+        <span class="drawer-section-title">TIMELINE_CHAPTERS</span>
+        <div id="drawer-chapters">
+          <!-- dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Resources Links -->
+      <div class="drawer-section">
+        <span class="drawer-section-title">RESOURCES_LOGGED</span>
+        <ul class="drawer-links" id="drawer-resources">
+          <!-- dynamically populated -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sponsor Popup modal form -->
+  <div class="modal-overlay" id="sponsor-modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 style="font-size: 14px;">[ INIT_SPONSOR_UPLINK ]</h3>
+        <button class="modal-close-btn" id="sponsor-modal-close" aria-label="Halt form application">✕</button>
+      </div>
+      
+      <form id="sponsor-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="sponsor-name">Sponsor Name</label>
+            <input type="text" id="sponsor-name" required placeholder="e.g. John Doe">
+          </div>
+          <div class="form-group">
+            <label for="sponsor-email">Company Email</label>
+            <input type="email" id="sponsor-email" required placeholder="john@company.com">
+          </div>
+          <div class="form-group">
+            <label for="sponsor-company">Company / Node Name</label>
+            <input type="text" id="sponsor-company" required placeholder="e.g. Acme Corp">
+          </div>
+          <div class="form-group">
+            <label for="sponsor-message">Sponsorship Goal Details</label>
+            <textarea id="sponsor-message" rows="3" required placeholder="Outline target sectors and budget parameters..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">[ SECURE_UPLINK ]</button>
+        </div>
+      </form>
+
+      <div class="modal-success-screen" id="sponsor-success">
+        <h3>[ UPLINK_RECEIVED: SUCCESS ]</h3>
+        <p style="margin-top: 8px;">A review manager will evaluate your application specs and establish contact within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer terminal console -->
+  <footer>
+    <div class="container">
+      <div class="footer-layout">
+        <div class="footer-logo">
+          <!-- Mini SVG Logo -->
+          <svg viewBox="0 0 500 500" width="20" height="20" style="color: var(--accent-gold)">
+            <path d="M 285,100 C 180,95 90,175 90,270 C 90,320 110,360 140,390 L 115,445 L 190,425 C 210,432 230,435 250,435 C 340,435 415,365 419,275" stroke="currentColor" stroke-width="28" stroke-linecap="round" fill="none" stroke-linejoin="round" />
+            <path d="M 250,230 L 285,230 L 285,190 L 325,190 L 325,150 L 365,150 L 365,110 L 405,110" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <polygon points="405,110 405,65 445,80 405,95" fill="currentColor" />
+          </svg>
+          <span class="logo-text" style="font-size: 14px; margin-left: 6px;">THE <strong>BUILD</strong> STORY</span>
+        </div>
+        
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Spotify Log">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.563.387-.857.207-2.377-1.454-5.37-1.783-8.892-.982-.336.076-.67-.135-.746-.472-.077-.336.135-.67.472-.746 3.856-.882 7.15-.5 9.817 1.135.295.18.387.563.206.858zm1.225-2.72c-.227.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.08-1.182-.413.125-.847-.107-.972-.52-.125-.413.107-.847.52-.972 3.676-1.116 8.243-.574 11.347 1.33.367.226.487.707.26 1.074zm.106-2.833C14.692 8.878 9.224 8.7 6.074 9.657c-.51.155-1.047-.136-1.202-.647-.154-.51.137-1.047.647-1.202 3.636-1.103 9.71-.9 13.435 1.313.46.273.61.87.337 1.33-.273.46-.87.61-1.33.337z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Apple Podcasts Log">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1-5.9c0 .55-.45 1-1 1s-1-.45-1-1v-2.2c0-.55.45-1 1-1s1 .45 1 1v2.2zm-1 9.9c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm4-4c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4zm1.5-6.1c0 .55-.45 1-1 1s-1-.45-1-1v-1.7c0-.55.45-1 1-1s1 .45 1 1v1.7z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube Log">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>[ CONSOLE: V4.1_SECURE ] &copy; 2026 The Build Story. Audited blueprints compiled.</p>
+        <ul class="footer-links">
+          <li><a href="#catalog-tabs-anchor">/root/episodes</a></li>
+          <li><a href="#open-sponsor-modal">/root/sponsors</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
