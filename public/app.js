@@ -496,7 +496,7 @@ function openEpisodeDrawer(epId) {
 // 6. Form submissions (Newsletter, Sponsor, Guest Application)
 
 // Google Apps Script endpoint — replace with your deployed URL after setup
-const GOOGLE_SHEETS_URL = ""; // e.g. "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbze6-OkVup8AlocY522cxEhuNP1C9DzblXLPjXr9hD-XnG1QqjHX79PSM98OkXT9_e6hg/exec"; // e.g. "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
 
 async function submitToGoogleSheets(data) {
   if (!GOOGLE_SHEETS_URL) {
