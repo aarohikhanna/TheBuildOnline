@@ -1,139 +1,74 @@
 // "The Build Story" Podcast Website Logic - Founder-Console Tech Noir Redesign
 
-// Mock Podcast Episodes Data with Tech Noir console metrics
+// Season 1 Coming Soon Episode Lineup
 const episodes = [
   {
-    id: "ep-04",
-    number: "Episode 04",
-    title: "Zero to $100M ARR: The Art of Scaling Under Extreme Pressure",
-    guest: "Elena Vance",
-    guestRole: "Founder & CEO, ApexScale",
-    guestBio: "Elena Vance is a veteran software engineer who founded ApexScale in 2021. Under her leadership, the company grew from a bedroom project to a leading cloud infrastructure provider servicing over 10,000 corporate clients globally, reaching $100M ARR in record time.",
-    guestImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200",
-    description: "Elena Vance pulls back the curtain on how ApexScale survived hypergrowth. She shares the exact mental models used to triage system failures, restructure executive teams, and pivot their GTM model in the middle of market shifts.",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    duration: "52:14",
-    frequency: "44.1 kHz",
-    bitrate: "320 kbps",
-    listenCount: "4,822",
-    published: "Jun 26, 2026",
-    stage: "Scaling",
-    tags: ["Scaling", "SaaS", "Funding"],
-    takeaways: [
-      "The 3x Rule: Systems break every time you triple in size. Design architecture for 10x but build for 3x.",
-      "Hire for the next 18 months, not the next 5 years. Startups change too fast for 5-year executive hires.",
-      "The 'Weekly Triage': Spend Mondays writing down the three biggest fires. Ignore everything else until they are out."
-    ],
-    chapters: [
-      { time: "00:00", seconds: 0, title: "ApexScale Origins" },
-      { time: "12:15", seconds: 735, title: "Surviving Hypergrowth Fires" },
-      { time: "25:40", seconds: 1540, title: "Hiring Executive Operators" },
-      { time: "42:10", seconds: 2530, title: "Direct Advice to Builders" }
-    ],
-    resources: [
-      { label: "ApexScale Official Site", url: "#" },
-      { label: "Book: High Output Management", url: "#" },
-      { label: "Vance Essay: Scaling the Messy Middle", url: "#" }
-    ]
-  },
-  {
-    id: "ep-03",
-    number: "Episode 03",
-    title: "Bootstrapping to $10M ARR: The Power of Ruthless Focus",
-    guest: "Marcus Chen",
-    guestRole: "Co-Founder, FlowDraft",
-    guestBio: "Marcus Chen is a serial bootstrapper. Before FlowDraft, he created three micro-SaaS products. FlowDraft was built with a team of five and zero VC funding, relying purely on customer revenue.",
-    guestImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200",
-    description: "How do you build a product that customers gladly pay for on Day 1? Marcus outlines how he built FlowDraft to $10M ARR without taking a single dollar of venture capital.",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    duration: "41:05",
-    frequency: "48.0 kHz",
-    bitrate: "320 kbps",
-    listenCount: "9,255",
-    published: "Jun 18, 2026",
-    stage: "Bootstrapped",
-    tags: ["Bootstrapping", "SaaS", "Productivity"],
-    takeaways: [
-      "Charging from Day 1 is the ultimate validation metric. If they won't pay, it's not a real problem.",
-      "The 'Anti-Roadmap' strategy: Build what users are complaining about today, not what you think they want next year.",
-      "Why profitability gives you the ultimate startup superpower: Time."
-    ],
-    chapters: [
-      { time: "00:00", seconds: 0, title: "Bootstrap vs VC Funding" },
-      { time: "08:30", seconds: 510, title: "Securing Your First 100 Paying Customers" },
-      { time: "18:45", seconds: 1125, title: "Running a Tiny Team at Scale" },
-      { time: "32:10", seconds: 1930, title: "The Math of $10M ARR Self-Funded" }
-    ],
-    resources: [
-      { label: "FlowDraft Product", url: "#" },
-      { label: "Chen Newsletter: Bootstrapped Blueprints", url: "#" }
-    ]
+    id: "ep-01",
+    number: "Episode 01",
+    title: "Title Reveal Soon",
+    guest: "Founder @ Antimttr",
+    guestRole: "Antimttr",
+    guestBio: "",
+    guestImage: "",
+    description: "The story behind Antimttr — how it started, what it took, and the decisions that defined it. Episode title dropping soon.",
+    audioUrl: "",
+    duration: "30–45 min",
+    stage: "Startup",
+    tags: ["Scaling", "Bootstrapping", "AI"],
+    takeaways: [],
+    chapters: [],
+    resources: []
   },
   {
     id: "ep-02",
     number: "Episode 02",
-    title: "The Hardest Pivot: Navigating a Dying Market",
-    guest: "Sarah Jenkins",
-    guestRole: "Co-Founder, Retrace AI",
-    guestBio: "Sarah Jenkins holds a PhD in Machine Learning from Stanford. She co-founded Retrace AI, navigating a successful pivot from web scraping tools to enterprise agentic systems.",
-    guestImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200",
-    description: "Sometimes the market changes beneath you. Sarah discusses the emotional and operational challenges of pivoting her entire team, returning capital to some investors, and building a new engine.",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-    duration: "38:40",
-    frequency: "44.1 kHz",
-    bitrate: "256 kbps",
-    listenCount: "3,110",
-    published: "Jun 10, 2026",
-    stage: "Pivot",
-    tags: ["Pivot", "AI", "Funding"],
-    takeaways: [
-      "A pivot is not a failure; staying in a dying market is.",
-      "How to have transparent conversations with your team during pivot periods.",
-      "Re-engaging investors: Translating lessons from the old model to energy for the new one."
-    ],
-    chapters: [
-      { time: "00:00", seconds: 0, title: "Signs of Market Decay" },
-      { time: "10:15", seconds: 615, title: "Making the Pivot Decision" },
-      { time: "22:50", seconds: 1370, title: "Rebuilding Around AI" },
-      { time: "33:00", seconds: 1980, title: "Post-Pivot Growth" }
-    ],
-    resources: [
-      { label: "Retrace AI Platform", url: "#" },
-      { label: "Jenkins Essay: When to Shift Stack", url: "#" }
-    ]
+    title: "Title Reveal Soon",
+    guest: "Founder @ Vyb Trip",
+    guestRole: "Vyb Trip",
+    guestBio: "",
+    guestImage: "",
+    description: "Inside the build at Vyb Trip — the origin story, the market, and what it's really like to build in this space. Episode title dropping soon.",
+    audioUrl: "",
+    duration: "30–45 min",
+    stage: "Startup",
+    tags: ["Bootstrapping", "SaaS", "Funding"],
+    takeaways: [],
+    chapters: [],
+    resources: []
   },
   {
-    id: "ep-01",
-    number: "Episode 01",
-    title: "Building in Hardware: Capital Efficiency in a Physical World",
-    guest: "David Kovacs",
-    guestRole: "Founder, LightSpeed Robotics",
-    guestBio: "David Kovacs has over 15 years of experience in industrial design. He founded LightSpeed Robotics to automate warehousing, innovating in rapid prototyping and local manufacturing.",
-    guestImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200",
-    description: "Hardware is hard, but it doesn't have to be capital inefficient. David outlines how LightSpeed Robotics built their MVP robots with minimal capital and secured hardware pre-sales.",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
-    duration: "45:22",
-    frequency: "48.0 kHz",
-    bitrate: "320 kbps",
-    listenCount: "1,940",
-    published: "Jun 1, 2026",
-    stage: "Hardware",
-    tags: ["Hardware", "Funding", "Operations"],
-    takeaways: [
-      "Simulation first: Invest heavily in virtual modeling before cutting metal.",
-      "The 'Staged Pre-Sale' method to secure customer capital early.",
-      "Setting up supply chains that are resilient to international logistics friction."
-    ],
-    chapters: [
-      { time: "00:00", seconds: 0, title: "Avoiding Capital-Heavy Hardware Traps" },
-      { time: "11:20", seconds: 680, title: "Building an MVP Under $20k" },
-      { time: "24:45", seconds: 1485, title: "Securing Retailer Commitments" },
-      { time: "38:10", seconds: 2290, title: "Rapid Prototyping Lessons" }
-    ],
-    resources: [
-      { label: "LightSpeed Robotics", url: "#" },
-      { label: "Kovacs Course: Lean Hardware Systems", url: "#" }
-    ]
+    id: "ep-03",
+    number: "Episode 03",
+    title: "Name & Title Reveal Soon",
+    guest: "Guest TBA",
+    guestRole: "Reveal coming soon",
+    guestBio: "",
+    guestImage: "",
+    description: "A founder story worth waiting for. Name and episode title dropping soon — subscribe to be the first to know.",
+    audioUrl: "",
+    duration: "30–45 min",
+    stage: "Startup",
+    tags: ["Scaling", "Funding", "AI"],
+    takeaways: [],
+    chapters: [],
+    resources: []
+  },
+  {
+    id: "ep-04",
+    number: "Episode 04",
+    title: "Name & Title Reveal Soon",
+    guest: "Guest TBA",
+    guestRole: "Reveal coming soon",
+    guestBio: "",
+    guestImage: "",
+    description: "Another conversation you won't want to miss. Full details dropping soon — subscribe below to get notified first.",
+    audioUrl: "",
+    duration: "30–45 min",
+    stage: "Startup",
+    tags: ["Hardware", "Bootstrapping", "Scaling"],
+    takeaways: [],
+    chapters: [],
+    resources: []
   }
 ];
 
@@ -558,67 +493,156 @@ function openEpisodeDrawer(epId) {
   drawer.classList.add("active");
 }
 
-// 6. Form submissions (Newsletter and Sponsor modal popups)
+// 6. Form submissions (Newsletter, Sponsor, Guest Application)
+
+// Google Apps Script endpoint — replace with your deployed URL after setup
+const GOOGLE_SHEETS_URL = ""; // e.g. "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+
+async function submitToGoogleSheets(data) {
+  if (!GOOGLE_SHEETS_URL) {
+    console.log("Google Sheets URL not configured. Form data:", data);
+    return true; // Simulate success for now
+  }
+  
+  try {
+    const response = await fetch(GOOGLE_SHEETS_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    return true;
+  } catch (err) {
+    console.error("Submission error:", err);
+    return false;
+  }
+}
+
 function setupForms() {
-  // Sidebar sub
+  // ── Newsletter ──
   const newsletterForm = document.getElementById("terminal-newsletter-form");
   if (newsletterForm) {
-    newsletterForm.addEventListener("submit", (e) => {
+    newsletterForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const emailInput = newsletterForm.querySelector("input[type='email']");
       const submitBtn = newsletterForm.querySelector("button");
-      const originalText = submitBtn.textContent;
       submitBtn.disabled = true;
-      submitBtn.textContent = "[ INITIALIZING_UPLINK... ]";
+      submitBtn.textContent = "Subscribing...";
       
-      setTimeout(() => {
-        newsletterForm.innerHTML = `
-          <div style="color: #10B981; font-weight: 700; font-size: 11px; text-align: center; border: 1px dashed #10B981; padding: 10px 0;">
-            [ UPLINK SECURED: WEEKLY_BLUEPRINT_SYNC_ON ]
-          </div>
-        `;
-      }, 1200);
+      await submitToGoogleSheets({
+        type: "newsletter",
+        email: emailInput.value,
+        timestamp: new Date().toISOString()
+      });
+      
+      newsletterForm.innerHTML = `
+        <div style="color: #10B981; font-weight: 700; font-size: 11px; text-align: center; border: 1px dashed #10B981; padding: 10px 0;">
+          ✓ You're in! We'll send you weekly episode summaries.
+        </div>
+      `;
     });
   }
   
-  // Sponsor Modal Popup
+  // ── Sponsor Modal ──
   const openSponsorBtn = document.getElementById("open-sponsor-modal");
   const sponsorOverlay = document.getElementById("sponsor-modal-overlay");
   const closeSponsorBtn = document.getElementById("sponsor-modal-close");
   const sponsorForm = document.getElementById("sponsor-form");
   const sponsorSuccess = document.getElementById("sponsor-success");
   
-  const openModal = () => {
+  const openSponsorModal = () => {
     sponsorOverlay.classList.add("active");
     sponsorForm.style.display = "block";
     sponsorSuccess.style.display = "none";
   };
   
-  const closeModal = () => {
+  const closeSponsorModal = () => {
     sponsorOverlay.classList.remove("active");
   };
   
-  if (openSponsorBtn) openSponsorBtn.addEventListener("click", openModal);
-  if (closeSponsorBtn) closeSponsorBtn.addEventListener("click", closeModal);
+  if (openSponsorBtn) openSponsorBtn.addEventListener("click", openSponsorModal);
+  if (closeSponsorBtn) closeSponsorBtn.addEventListener("click", closeSponsorModal);
   if (sponsorOverlay) {
     sponsorOverlay.addEventListener("click", (e) => {
-      if (e.target === sponsorOverlay) closeModal();
+      if (e.target === sponsorOverlay) closeSponsorModal();
     });
   }
   
   if (sponsorForm) {
-    sponsorForm.addEventListener("submit", (e) => {
+    sponsorForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const submitBtn = sponsorForm.querySelector("button[type='submit']");
       const originalText = submitBtn.textContent;
       submitBtn.disabled = true;
-      submitBtn.textContent = "[ SENDING_UPLINK... ]";
+      submitBtn.textContent = "Submitting...";
       
-      setTimeout(() => {
-        sponsorForm.style.display = "none";
-        sponsorSuccess.style.display = "block";
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }, 1200);
+      await submitToGoogleSheets({
+        type: "sponsor",
+        name: document.getElementById("sponsor-name").value,
+        email: document.getElementById("sponsor-email").value,
+        company: document.getElementById("sponsor-company").value,
+        message: document.getElementById("sponsor-message").value,
+        timestamp: new Date().toISOString()
+      });
+      
+      sponsorForm.style.display = "none";
+      sponsorSuccess.style.display = "block";
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
+  }
+  
+  // ── Guest Application Modal ──
+  const openGuestBtn = document.getElementById("open-guest-modal");
+  const guestOverlay = document.getElementById("guest-modal-overlay");
+  const closeGuestBtn = document.getElementById("guest-modal-close");
+  const guestForm = document.getElementById("guest-form");
+  const guestSuccess = document.getElementById("guest-success");
+  
+  const openGuestModal = () => {
+    guestOverlay.classList.add("active");
+    guestForm.style.display = "block";
+    guestSuccess.style.display = "none";
+  };
+  
+  const closeGuestModal = () => {
+    guestOverlay.classList.remove("active");
+  };
+  
+  if (openGuestBtn) openGuestBtn.addEventListener("click", openGuestModal);
+  if (closeGuestBtn) closeGuestBtn.addEventListener("click", closeGuestModal);
+  if (guestOverlay) {
+    guestOverlay.addEventListener("click", (e) => {
+      if (e.target === guestOverlay) closeGuestModal();
+    });
+  }
+  
+  if (guestForm) {
+    guestForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const submitBtn = guestForm.querySelector("button[type='submit']");
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+      
+      await submitToGoogleSheets({
+        type: "guest_application",
+        fullName: document.getElementById("guest-fullname").value,
+        email: document.getElementById("guest-email").value,
+        linkedin: document.getElementById("guest-linkedin").value,
+        company: document.getElementById("guest-company").value,
+        role: document.getElementById("guest-role").value,
+        stage: document.getElementById("guest-stage").value,
+        story: document.getElementById("guest-story").value,
+        topic: document.getElementById("guest-topic").value,
+        referral: document.getElementById("guest-referral").value,
+        timestamp: new Date().toISOString()
+      });
+      
+      guestForm.style.display = "none";
+      guestSuccess.style.display = "block";
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
     });
   }
 }

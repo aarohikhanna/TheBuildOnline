@@ -1484,3 +1484,226 @@ footer {
   flex-shrink: 0;
   margin-top: 1px;
 }
+
+/* ── Platforms Strip ─────────────────────────────────────────────── */
+.platforms-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 28px 24px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.platforms-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.platform-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  background: transparent;
+}
+
+.platform-badge:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background: var(--accent-gold-light);
+}
+
+.platform-badge svg {
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.platform-badge:hover svg {
+  opacity: 1;
+  fill: var(--accent-gold);
+}
+
+/* ── Value Section ───────────────────────────────────────────────── */
+.value-section {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.value-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.value-card {
+  padding: 24px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: var(--transition-fast);
+}
+
+.value-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.value-icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.value-card h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.value-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Guest CTA Section ───────────────────────────────────────────── */
+.guest-cta-section {
+  margin-top: 48px;
+  padding: 48px 0;
+  border-top: 1px dashed var(--border-color);
+}
+
+.guest-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 40px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.guest-cta-inner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+
+.guest-cta-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.guest-cta-text h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 8px 0 12px;
+}
+
+.guest-cta-text p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.btn-lg {
+  padding: 14px 28px !important;
+  font-size: 14px !important;
+  white-space: nowrap;
+}
+
+/* ── Modal Wide Variant ──────────────────────────────────────────── */
+.modal-wide {
+  max-width: 640px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Select styling */
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  appearance: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px var(--accent-gold-light);
+}
+
+@media (max-width: 768px) {
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+  .guest-cta-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px;
+  }
+  .guest-cta-text p {
+    max-width: 100%;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .platforms-strip {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
