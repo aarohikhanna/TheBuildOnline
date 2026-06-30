@@ -1336,8 +1336,11 @@ footer {
     padding-top: 110px;
   }
   .modal-overlay {
-    align-items: flex-start;
+    display: block;
     padding: 20px 12px;
+  }
+  .modal {
+    margin: 20px auto;
   }
   .form-group input, 
   .form-group textarea,
@@ -1745,4 +1748,9 @@ select:focus {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+body.modal-open {
+  overflow: hidden !important;
+  height: 100vh !important;
 }

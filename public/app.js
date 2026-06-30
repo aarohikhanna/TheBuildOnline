@@ -414,6 +414,7 @@ function setupDrawer() {
   const closeDrawer = () => {
     overlay.classList.remove("active");
     drawer.classList.remove("active");
+    document.body.classList.remove("modal-open");
   };
   
   if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
@@ -491,6 +492,7 @@ function openEpisodeDrawer(epId) {
   
   overlay.classList.add("active");
   drawer.classList.add("active");
+  document.body.classList.add("modal-open");
 }
 
 // 6. Form submissions (Newsletter, Sponsor, Guest Application)
@@ -578,10 +580,12 @@ function setupForms() {
     sponsorOverlay.classList.add("active");
     sponsorForm.style.display = "block";
     sponsorSuccess.style.display = "none";
+    document.body.classList.add("modal-open");
   };
   
   const closeSponsorModal = () => {
     sponsorOverlay.classList.remove("active");
+    document.body.classList.remove("modal-open");
   };
   
   if (openSponsorBtn) openSponsorBtn.addEventListener("click", openSponsorModal);
@@ -627,10 +631,12 @@ function setupForms() {
     guestOverlay.classList.add("active");
     guestForm.style.display = "block";
     guestSuccess.style.display = "none";
+    document.body.classList.add("modal-open");
   };
   
   const closeGuestModal = () => {
     guestOverlay.classList.remove("active");
+    document.body.classList.remove("modal-open");
   };
   
   if (openGuestBtn) openGuestBtn.addEventListener("click", openGuestModal);
