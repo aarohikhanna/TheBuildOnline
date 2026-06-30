@@ -1768,3 +1768,182 @@ body.modal-open {
   overflow: hidden !important;
   height: 100vh !important;
 }
+
+/* ── Join the Narrative Pitch Tab Panel ────────────────────────── */
+.pitch-tab-section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.pitch-label-bar {
+  margin-bottom: 20px;
+}
+
+.pitch-label-bar h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.pitch-mono-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-gold);
+  letter-spacing: 0.12em;
+}
+
+.pitch-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--text-primary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pitch-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-primary);
+}
+
+.pitch-tab-btn {
+  background: none;
+  border: none;
+  border-right: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 14px 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-fast);
+}
+
+.pitch-tab-btn:hover {
+  color: var(--accent-gold);
+  background: rgba(var(--accent-gold-light), 0.05);
+}
+
+.pitch-tab-btn.active {
+  color: var(--accent-gold);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--bg-secondary);
+  margin-bottom: -1px;
+}
+
+.pitch-tab-btn .prompt-sym {
+  color: var(--accent-gold);
+}
+
+.pitch-content {
+  display: none;
+  padding: 24px;
+}
+
+.pitch-content.active {
+  display: block;
+}
+
+.pitch-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+}
+
+.pitch-info h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.pitch-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.pitch-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.perk-item {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.perk-bullet {
+  color: var(--accent-gold);
+  font-weight: bold;
+}
+
+.pitch-cta-card {
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cta-card-header {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--accent-gold);
+  letter-spacing: 0.1em;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.cta-metrics {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cta-metrics li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px dotted rgba(var(--border-color), 0.5);
+  padding-bottom: 4px;
+}
+
+.cta-metrics li strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .pitch-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pitch-tabs {
+    flex-direction: column;
+  }
+  .pitch-tab-btn {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+  }
+  .pitch-tab-btn.active {
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(var(--accent-gold-light), 0.05);
+  }
+}

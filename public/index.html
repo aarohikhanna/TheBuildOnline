@@ -299,15 +299,99 @@
       </div>
     </div>
 
-    <!-- Be a Guest CTA -->
-    <div class="guest-cta-section" id="be-a-guest">
-      <div class="guest-cta-inner">
-        <div class="guest-cta-text">
-          <span class="guest-cta-label">Got a build story?</span>
-          <h2>Come on the show.</h2>
-          <p>We're always looking for founders who are in the trenches — building something real, with a story worth telling. If that's you, apply to be a guest.</p>
+    <!-- Join the Build Pitch Section (Sponsors & Guests) -->
+    <div class="pitch-tab-section" id="join-the-narrative">
+      <div class="pitch-tab-container">
+        
+        <div class="pitch-label-bar">
+          <span class="pitch-mono-tag">// PARTNER_CONSOLES</span>
+          <h2>Join the narrative.</h2>
         </div>
-        <button class="btn btn-primary btn-lg" id="open-guest-modal">Apply to Be a Guest</button>
+
+        <div class="pitch-panel">
+          <div class="pitch-tabs">
+            <button class="pitch-tab-btn active" data-pitch="guest">
+              <span class="prompt-sym">&gt;</span> APPEAR_AS_GUEST
+            </button>
+            <button class="pitch-tab-btn" data-pitch="sponsor">
+              <span class="prompt-sym">&gt;</span> SPONSOR_THE_SHOW
+            </button>
+          </div>
+
+          <!-- Guest Pitch Content -->
+          <div class="pitch-content active" id="pitch-guest">
+            <div class="pitch-grid">
+              <div class="pitch-info">
+                <h3>Skip the rehearsed PR scripts. Share the raw build.</h3>
+                <p class="pitch-desc">
+                  Most founder podcasts want to know about your exit. We want to know about your compile errors, your architectural pivots, and the hires that kept you awake at 3 AM. If you're a builder currently in the trenches mid-journey, this is your stage.
+                </p>
+                <div class="pitch-perks">
+                  <div class="perk-item">
+                    <span class="perk-bullet">✓</span>
+                    <span><strong>Build Developer Goodwill:</strong> Connect directly with an engineering-heavy audience that understands technical depth.</span>
+                  </div>
+                  <div class="perk-item">
+                    <span class="perk-bullet">✓</span>
+                    <span><strong>Find Operators:</strong> Put your scaling problems out there and recruit top-tier technical partners and founders.</span>
+                  </div>
+                  <div class="perk-item">
+                    <span class="perk-bullet">✓</span>
+                    <span><strong>Deconstruct Playbooks:</strong> Share specific, actionable mental models and numbers without PR filters.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pitch-cta-card">
+                <div class="cta-card-header">GUEST_METRICS_LOG</div>
+                <ul class="cta-metrics">
+                  <li><span>Length</span> <strong>30-45 mins</strong></li>
+                  <li><span>Format</span> <strong>Unscripted, 1-on-1</strong></li>
+                  <li><span>Requirement</span> <strong>Founder/Technical Lead</strong></li>
+                  <li><span>Focus</span> <strong>Architecture & Pivot Decisions</strong></li>
+                </ul>
+                <button class="btn btn-primary btn-lg" id="pitch-open-guest-modal" style="width: 100%;">Apply to Be a Guest</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sponsor Pitch Content -->
+          <div class="pitch-content" id="pitch-sponsor">
+            <div class="pitch-grid">
+              <div class="pitch-info">
+                <h3>Reach elite builders who build, not just browse.</h3>
+                <p class="pitch-desc">
+                  Most developer podcasts sell impressions. We sell immersion. <em>The Build Story</em> has zero fluff. Our listeners are CTOs, founding engineers, and scaling operators who build hardware, write compilers, and raise Series A. When you sponsor us, you aren't placing an ad — you're integrating into the developer console of the hottest names in tech.
+                </p>
+                <div class="pitch-perks">
+                  <div class="perk-item">
+                    <span class="perk-bullet">✓</span>
+                    <span><strong>92% Developer Audience:</strong> Highly technical dev crowd (no casual browse traffic or noise).</span>
+                  </div>
+                  <div class="perk-item">
+                    <span class="perk-bullet">✓</span>
+                    <span><strong>CTO & Founders:</strong> Direct line to technical decision makers, platform purchasers, and architects.</span>
+                  </div>
+                  <div class="perk-item">
+                    <span class="perk-bullet">✓</span>
+                    <span><strong>Deep Integrations:</strong> Custom middleware, live console reviews, and framework highlights rather than stale script reads.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pitch-cta-card">
+                <div class="cta-card-header">SPONSOR_AUDIENCE_LOG</div>
+                <ul class="cta-metrics">
+                  <li><span>Audience Dev Focus</span> <strong>92% Builders</strong></li>
+                  <li><span>CTOs/Founders</span> <strong>42% Share</strong></li>
+                  <li><span>Monthly listens</span> <strong>15k+ per Episode</strong></li>
+                  <li><span>Conversion rate</span> <strong>Top-tier tech CTR</strong></li>
+                </ul>
+                <button class="btn btn-accent btn-lg" id="pitch-open-sponsor-modal" style="width: 100%;">Become a Sponsor</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
 

@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAudioPlayer();
   setupSearchAndFilters();
   setupDrawer();
+  setupPitchTabs();
   setupForms();
 });
 
@@ -419,6 +420,54 @@ function setupDrawer() {
   
   if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
   if (overlay) overlay.addEventListener("click", closeDrawer);
+}
+
+// 5b. Pitch Interactive Tabs Console
+function setupPitchTabs() {
+  const tabBtns = document.querySelectorAll(".pitch-tab-btn");
+  const tabContents = document.querySelectorAll(".pitch-content");
+  
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabBtns.forEach(b => b.classList.remove("active"));
+      tabContents.forEach(c => c.classList.remove("active"));
+      
+      btn.classList.add("active");
+      const targetId = `pitch-${btn.getAttribute("data-pitch")}`;
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) targetContent.classList.add("active");
+    });
+  });
+  
+  // Connect CTA buttons inside pitch tabs
+  const guestBtn = document.getElementById("pitch-open-guest-modal");
+  const sponsorBtn = document.getElementById("pitch-open-sponsor-modal");
+  
+  const guestOverlay = document.getElementById("guest-modal-overlay");
+  const guestForm = document.getElementById("guest-form");
+  const guestSuccess = document.getElementById("guest-success");
+  
+  const sponsorOverlay = document.getElementById("sponsor-modal-overlay");
+  const sponsorForm = document.getElementById("sponsor-form");
+  const sponsorSuccess = document.getElementById("sponsor-success");
+  
+  if (guestBtn && guestOverlay) {
+    guestBtn.addEventListener("click", () => {
+      guestOverlay.classList.add("active");
+      guestForm.style.display = "block";
+      guestSuccess.style.display = "none";
+      document.body.classList.add("modal-open");
+    });
+  }
+  
+  if (sponsorBtn && sponsorOverlay) {
+    sponsorBtn.addEventListener("click", () => {
+      sponsorOverlay.classList.add("active");
+      sponsorForm.style.display = "block";
+      sponsorSuccess.style.display = "none";
+      document.body.classList.add("modal-open");
+    });
+  }
 }
 
 function openEpisodeDrawer(epId) {
