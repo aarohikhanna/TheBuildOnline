@@ -725,21 +725,27 @@ function setupForms() {
       submitBtn.textContent = originalText;
     });
   }
+
+  // Expose hooks to the global scope for direct URL hash routing
+  window.openGuestModal = openGuestModal;
+  window.openSponsorModal = openSponsorModal;
 }
 
 // 7. Hash-based direct link navigation
 function handleUrlHash() {
   const hash = window.location.hash.toLowerCase();
   if (hash === "#be-a-guest" || hash === "#apply-guest" || hash === "#apply-to-be-a-guest") {
-    setTimeout(() => {
-      const openGuestBtn = document.getElementById("open-guest-modal") || document.getElementById("pitch-open-guest-modal");
-      if (openGuestBtn) openGuestBtn.click();
-    }, 300);
+    if (typeof window.openGuestModal === "function") {
+      window.openGuestModal();
+    } else {
+      setTimeout(handleUrlHash, 100);
+    }
   } else if (hash === "#sponsor" || hash === "#become-sponsor" || hash === "#sponsor-the-show") {
-    setTimeout(() => {
-      const openSponsorBtn = document.getElementById("open-sponsor-modal") || document.getElementById("pitch-open-sponsor-modal");
-      if (openSponsorBtn) openSponsorBtn.click();
-    }, 300);
+    if (typeof window.openSponsorModal === "function") {
+      window.openSponsorModal();
+    } else {
+      setTimeout(handleUrlHash, 100);
+    }
   }
 }
 
