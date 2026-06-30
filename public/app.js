@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupDrawer();
   setupPitchTabs();
   setupForms();
+  handleUrlHash();
 });
 
 // 1. Theme Configuration (Cyber Light / Carbon Dark)
@@ -725,3 +726,21 @@ function setupForms() {
     });
   }
 }
+
+// 7. Hash-based direct link navigation
+function handleUrlHash() {
+  const hash = window.location.hash.toLowerCase();
+  if (hash === "#be-a-guest" || hash === "#apply-guest" || hash === "#apply-to-be-a-guest") {
+    setTimeout(() => {
+      const openGuestBtn = document.getElementById("open-guest-modal") || document.getElementById("pitch-open-guest-modal");
+      if (openGuestBtn) openGuestBtn.click();
+    }, 300);
+  } else if (hash === "#sponsor" || hash === "#become-sponsor" || hash === "#sponsor-the-show") {
+    setTimeout(() => {
+      const openSponsorBtn = document.getElementById("open-sponsor-modal") || document.getElementById("pitch-open-sponsor-modal");
+      if (openSponsorBtn) openSponsorBtn.click();
+    }, 300);
+  }
+}
+
+window.addEventListener("hashchange", handleUrlHash);
