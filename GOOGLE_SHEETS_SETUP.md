@@ -6,8 +6,9 @@ Store all form submissions (newsletter, sponsor, guest applications) in a Google
 
 1. Go to [Google Sheets](https://sheets.google.com) and create a new spreadsheet
 2. Name it **"The Build Story — Submissions"**
-3. Create **3 tabs** (click the `+` at the bottom):
+3. Create **4 tabs** (click the `+` at the bottom):
    - **Newsletter** — columns: `Timestamp | Email`
+   - **Invite Requests** — columns: `Timestamp | Email`
    - **Sponsors** — columns: `Timestamp | Name | Email | Company | Message`
    - **Guest Applications** — columns: `Timestamp | Full Name | Email | LinkedIn | Company | Role | Stage | Story | Topic | Referral`
 4. Type these column headers in Row 1 of each tab
@@ -24,6 +25,11 @@ function doPost(e) {
   
   if (data.type === "newsletter") {
     const tab = sheet.getSheetByName("Newsletter");
+    tab.appendRow([data.timestamp, data.email]);
+  }
+  
+  else if (data.type === "invite_request") {
+    const tab = sheet.getSheetByName("Invite Requests");
     tab.appendRow([data.timestamp, data.email]);
   }
   

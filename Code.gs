@@ -12,6 +12,11 @@ function doPost(e) {
     tab.appendRow([data.timestamp, data.name, data.email, data.company, data.message]);
   }
   
+  if (data.type === "invite_request") {
+    var tab = sheet.getSheetByName("Invite Requests");
+    tab.appendRow([data.timestamp, data.email]);
+  }
+  
   if (data.type === "guest_application") {
     var tab = sheet.getSheetByName("Guest Applications");
     tab.appendRow([
