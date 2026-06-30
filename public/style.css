@@ -1357,7 +1357,21 @@ footer {
     grid-template-columns: 1fr;
   }
   .about-pod-stats {
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .stat-chip {
+    min-width: unset;
+  }
+  .host-card-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  .host-socials {
+    justify-content: center;
   }
   .differentiators {
     grid-template-columns: 1fr;
