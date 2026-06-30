@@ -156,7 +156,10 @@
         <div class="sidebar-panel">
           <div class="panel-header">Builders Circle</div>
           <p class="panel-text">Get an exclusive invite to connect with fellow founders — share real numbers, frameworks, and lessons from the trenches.</p>
-          <button class="btn btn-secondary" style="width: 100%; font-size: 12px; padding: 8px;" onclick="alert('Request received! Check your email for an invite link.'); return false;">Request an Invite</button>
+          <form class="terminal-form" id="terminal-invite-form">
+            <input type="email" class="terminal-input" id="invite-email" placeholder="your@email.com" required aria-label="Email address">
+            <button type="submit" class="btn btn-secondary" style="padding: 8px; font-size: 12px;">Request an Invite</button>
+          </form>
         </div>
 
       </div>

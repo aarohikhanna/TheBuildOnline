@@ -519,6 +519,30 @@ async function submitToGoogleSheets(data) {
 }
 
 function setupForms() {
+  // ── Request an Invite Form ──
+  const inviteForm = document.getElementById("terminal-invite-form");
+  if (inviteForm) {
+    inviteForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const emailInput = document.getElementById("invite-email");
+      const submitBtn = inviteForm.querySelector("button[type='submit']");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Requesting...";
+      
+      await submitToGoogleSheets({
+        type: "invite_request",
+        email: emailInput.value,
+        timestamp: new Date().toISOString()
+      });
+      
+      inviteForm.innerHTML = `
+        <div style="color: #10B981; font-weight: 700; font-size: 11px; text-align: center; border: 1px dashed #10B981; padding: 10px; margin-top: 5px; line-height: 1.4;">
+          ✓ Request received! Check your email for an invite link.
+        </div>
+      `;
+    });
+  }
+
   // ── Newsletter ──
   const newsletterForm = document.getElementById("terminal-newsletter-form");
   if (newsletterForm) {
