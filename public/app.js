@@ -264,22 +264,33 @@ function toggleEpisodePlayback(epId) {
     audio.src = activeEpisode.audioUrl;
     audio.load();
     
-    // Update console details display
-    document.getElementById("console-featured-num").textContent = activeEpisode.number;
-    document.getElementById("console-featured-title").textContent = activeEpisode.title;
-    document.getElementById("console-desc-txt").textContent = activeEpisode.description;
+    // Update console details display safely
+    const featNum = document.getElementById("console-featured-num");
+    if (featNum) featNum.textContent = activeEpisode.number;
+    const featTitle = document.getElementById("console-featured-title");
+    if (featTitle) featTitle.textContent = activeEpisode.title;
+    const descTxt = document.getElementById("console-desc-txt");
+    if (descTxt) descTxt.textContent = activeEpisode.description;
     
-    // Update guest console details
-    document.getElementById("console-avatar").src = activeEpisode.guestImage;
-    document.getElementById("console-guest-name").textContent = activeEpisode.guest;
-    document.getElementById("console-guest-role").textContent = activeEpisode.guestRole;
+    // Update guest console details safely
+    const avatar = document.getElementById("console-avatar");
+    if (avatar) avatar.src = activeEpisode.guestImage;
+    const guestName = document.getElementById("console-guest-name");
+    if (guestName) guestName.textContent = activeEpisode.guest;
+    const guestRole = document.getElementById("console-guest-role");
+    if (guestRole) guestRole.textContent = activeEpisode.guestRole;
     
-    // Update console audio logs metadata
-    document.getElementById("console-log-frequency").textContent = activeEpisode.frequency;
-    document.getElementById("console-log-bitrate").textContent = activeEpisode.bitrate;
-    document.getElementById("console-log-stage").textContent = activeEpisode.stage;
-    document.getElementById("console-log-listens").textContent = activeEpisode.listenCount;
-    document.getElementById("console-log-date").textContent = activeEpisode.published;
+    // Update console audio logs metadata safely
+    const logFreq = document.getElementById("console-log-frequency");
+    if (logFreq) logFreq.textContent = activeEpisode.frequency || "";
+    const logBitrate = document.getElementById("console-log-bitrate");
+    if (logBitrate) logBitrate.textContent = activeEpisode.bitrate || "";
+    const logStage = document.getElementById("console-log-stage");
+    if (logStage) logStage.textContent = activeEpisode.stage || "";
+    const logListens = document.getElementById("console-log-listens");
+    if (logListens) logListens.textContent = activeEpisode.listenCount || "";
+    const logDate = document.getElementById("console-log-date");
+    if (logDate) logDate.textContent = activeEpisode.published || "";
     
     isPlaying = false; // Reset to play from start
     togglePlaybackState();
